@@ -2,6 +2,7 @@
 -- Enable LSP here
 vim.lsp.enable({"lua_ls"})
 vim.lsp.enable({"csharp_ls"})
+vim.lsp.enable({"pyright"})
 
 -- Configure the lsp
 vim.diagnostic.config({

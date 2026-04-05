@@ -17,7 +17,7 @@ return {
       			variables = "NONE",
     			},
 		})
-		vim.cmd("colorscheme carbonfox")
+		vim.cmd("colorscheme nordfox") -- also could use dawnfox, dayfox, nighfox, terafox, nordfox, carbonfox
 	end,
 }
 
