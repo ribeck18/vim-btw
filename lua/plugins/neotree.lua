@@ -10,7 +10,23 @@ return {
     opts = {
 	    window = {
         	position = "float",
-		}
+		},
+
+		default_component_configs = {
+      			git_status = {
+        symbols = {
+          added     = "+",
+          modified  = "~",
+          deleted   = "-",
+          renamed   = "→",
+          untracked = "★", -- replaces "?"
+          ignored   = "!",
+          unstaged  = "✗",
+          staged    = "✓",
+          conflict  = "",
+        },
+      },
+    },
 	},
     keys = {
 		{"<leader>e", "<Cmd>Neotree toggle float<CR>", desc = "Toggle the file tree"},
