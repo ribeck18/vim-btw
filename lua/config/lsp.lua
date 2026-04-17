@@ -7,7 +7,8 @@ vim.lsp.enable({"ruff"})
 
 -- Configure the lsp
 vim.diagnostic.config({
-	virtual_lines = true,  --show diagnostic below the line 
+	virtual_lines = false,  --show diagnostic below the line 
+	underline = true,
 
 	signs = {
 		text ={
@@ -18,6 +19,9 @@ vim.diagnostic.config({
 		}
 	}
 })
+
+-- show the error message
+vim.keymap.set("n", "<leader>i", vim.diagnostic.open_float)
 
 vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#ff6b6b" })
 vim.api.nvim_set_hl(0, "DiagnosticSignWarn",  { fg = "#f9c74f" })
