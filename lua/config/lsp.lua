@@ -7,6 +7,8 @@ vim.lsp.enable({ "vtsls" })
 vim.lsp.enable({ "html" })
 vim.lsp.enable({ "cssmoudules_ls" })
 vim.lsp.enable({ "cssls"})
+vim.lsp.enable({ "clangd" })
+vim.lsp.enable({ "gopls" })
 
 -- Configure the lsp
 vim.diagnostic.config({
@@ -111,4 +113,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts, {desc = "Go to prev diagnostic."})
 		vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts, {desc = "Go to next diagnostic."})
 	end,
+})
+
+
+--go format on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
+    vim.lsp.buf.format({ async = false })
+  end,
 })
