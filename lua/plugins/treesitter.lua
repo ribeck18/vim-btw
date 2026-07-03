@@ -1,12 +1,11 @@
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      vim.filetype.add({
-        extension = {
-          axaml = "xml",
-        },
-      })
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate',
+    config = function()
+        require('nvim-treesitter').setup {
+            install_dir = vim.fn.stdpath('data') .. '/site'
+        }
+        require('nvim-treesitter').install { 'c_sharp', 'python', 'html', 'css' }
     end,
-  },
 }
