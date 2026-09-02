@@ -29,7 +29,6 @@ return {
     vim.g.opencode_opts = {
       -- Your configuration, if any; goto definition on the type or field for details
     }
-vim.keymap.set("v", "kj", "<esc>")
 
     vim.o.autoread = true -- Required for `opts.events.reload`
 

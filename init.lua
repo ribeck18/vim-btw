@@ -18,3 +18,15 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
   group = vim.api.nvim_create_augroup("AutoReadOnChange", { clear = true }),
   command = "checktime",
 })
+
+
+--Tab settings
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "html", "css"},
+	callback = function ()
+		vim.bo.expandtab= true
+		vim.bo.tabstop = 2
+		vim.bo.shiftwidth = 2
+		vim.bo.softtabstop = 2
+	end,
+})
