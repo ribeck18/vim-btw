@@ -1,32 +1,3 @@
-require("core.mappings")
-require("config.lazy")
-require("config.lsp")
-
-
-vim.opt.number = true         -- shows line numbers
-vim.opt.relativenumber = true -- shows relative line numbers
-
---fold functions
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 99
-
--- Auto-reload buffers when files change on disk (e.g. OpenCode edits).
-vim.opt.autoread = true
-vim.opt.updatetime = 1000
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
-  group = vim.api.nvim_create_augroup("AutoReadOnChange", { clear = true }),
-  command = "checktime",
-})
-
-
---Tab settings
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "html", "css"},
-	callback = function ()
-		vim.bo.expandtab= true
-		vim.bo.tabstop = 2
-		vim.bo.shiftwidth = 2
-		vim.bo.softtabstop = 2
-	end,
-})
+require('lsp')
+require('keymaps')
+require('plugins.treesitter')
