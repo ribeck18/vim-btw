@@ -1,7 +1,3 @@
-vim.pack.add{
-	{ src = 'https://github.com/nvim-treesitter/nvim-treesitter' }
-}
-
 require('nvim-treesitter').install({
 	'lua',
 	'go',
@@ -14,6 +10,8 @@ require('nvim-treesitter').install({
 	'typescript',
 	'c',
 })
+
+require('nvim-treesitter').setup()
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 

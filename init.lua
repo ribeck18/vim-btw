@@ -1,3 +1,4 @@
 require('lsp')
+require('plugins')
 require('keymaps')
-require('plugins.treesitter')
+require('config')
