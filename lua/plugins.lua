@@ -13,6 +13,7 @@ vim.pack.add{
 	{ src = 'https://github.com/windwp/nvim-autopairs' },
 	{ src = 'https://github.com/goolord/alpha-nvim' },
 	{ src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
+	{src = 'https://github.com/ThePrimeagen/Harpoon', version = "harpoon2"}
 }
 
 require('plugins.nightfox')
@@ -23,6 +24,7 @@ require('plugins.treesitter')
 require('plugins.blink')
 require('plugins.autopairs')
 require('plugins.alpha')
+require('plugins.harpoon')
 
 
 

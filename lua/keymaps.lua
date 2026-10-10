@@ -13,6 +13,23 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle float<cr>', { desc = 'Toggle the file tree' })
 
 
+-- Harpoon
+local harpoon = require('harpoon')
+vim.keymap.set("n", "<leader>ha", function()
+    harpoon:list():add()
+end, { desc = "Harpoon Add File" })
+
+vim.keymap.set("n", "<leader>hh", function()
+    harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = "Harpoon Menu" })
+
+for i = 1, 5 do
+    vim.keymap.set("n", "<leader>" .. i, function()
+        harpoon:list():select(i)
+    end, { desc = "Harpoon File " .. i })
+end
+
+
 --lsp specific keybinds
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)

@@ -25,6 +25,7 @@ vim.api.nvim_create_autocmd('FileType', {
 	'javascript',
 	'typescript',
 	'c',
+	'gohtmltmpl',
   },
   callback = function() vim.treesitter.start() end,
 })

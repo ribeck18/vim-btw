@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-	pattern = { 'html', 'css' },
+	pattern = { 'html', 'css', 'gohtml' },
 	callback = function ()
 		vim.bo.expandtab = true
 		vim.bo.tabstop = 2
