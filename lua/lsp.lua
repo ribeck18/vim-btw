@@ -13,3 +13,9 @@ require('mason-tool-installer').setup({
 		"stylua",
 	}
 })
+
+vim.lsp.config('sourcekit', {
+	cmd = { 'xcrun', 'sourcekit-lsp' },
+	filetypes = { 'swift' },
+})
+vim.lsp.enable('sourcekit')

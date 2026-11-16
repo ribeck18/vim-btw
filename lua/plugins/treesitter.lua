@@ -1,5 +1,6 @@
 require('nvim-treesitter').install({
 	'lua',
+	'swift',
 	'go',
 	'gomod',
 	'gosum',
@@ -16,6 +17,7 @@ require('nvim-treesitter').setup()
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 
 	'lua',
+	'swift',
 	'go',
 	'gomod',
 	'gosum',
