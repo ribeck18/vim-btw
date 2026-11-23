@@ -1,7 +1,4 @@
-return {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  opts = {
+require('which-key').setup({
 	win = {
       		row = math.huge,
       		col = math.huge,
@@ -13,15 +10,5 @@ return {
     	layout = {
       		width = { min = 20, max = 20 },
       		spacing = 1,
-    	},
-  },
-  keys = {
-    {
-      "<leader>?",
-      function()
-        require("which-key").show({ global = false })
-      end,
-      desc = "Buffer Local Keymaps (which-key)",
-    },
-  },
-}
+    	}
+  })
