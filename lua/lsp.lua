@@ -19,3 +19,4 @@ vim.lsp.config('sourcekit', {
 	filetypes = { 'swift' },
 })
 vim.lsp.enable('sourcekit')
+vim.lsp.enable('clangd')
