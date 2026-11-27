@@ -12,5 +12,5 @@ require('nightfox').setup({
 		variables = "NONE",
 		},
 
-	vim.cmd('colorscheme nordfox')
+	vim.cmd('colorscheme carbonfox')
 })
